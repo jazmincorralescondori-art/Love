@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti 💌</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #f8bbd0, #ce93d8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    text-align: center;
+}
+
+/* RAMO */
+.ramo {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* SOBRE */
+.sobre {
+    position: relative;
+    width: 260px;
+    height: 160px;
+    background: #fce4ec;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* TAPA */
+.tapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-top: 80px solid #f8bbd0;
+    transform-origin: top;
+    transition: 0.6s;
+}
+
+/* ABIERTO */
+.sobre.abierto .tapa {
+    transform: rotateX(180deg);
+}
+
+/* CORAZÓN SELLADO */
+.corazon {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    animation: latido 1s infinite;
+}
+
+/* LUZ */
+.luz {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.7), transparent);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sobre.abierto .luz {
+    opacity: 1;
+}
+
+/* LATIDO */
+@keyframes latido {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.3); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- RAMO -->
+    <img src="girasol.png" class="ramo">
+
+    <!-- SOBRE -->
+    <div class="sobre" onclick="abrirCarta()" id="sobre">
+        <div class="tapa"></div>
+        <div class="luz"></div>
+        <div class="corazon">🩷</div>
+    </div>
+
+</div>
+
+<!-- MÚSICA AUTOMÁTICA -->
+<audio autoplay loop>
+    <source src="te amo.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function abrirCarta() {
+    let sobre = document.getElementById("sobre");
+    sobre.classList.add("abierto");
+
+    setTimeout(() => {
+        window.location.href = "album.html";
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
