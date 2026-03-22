@@ -6,19 +6,29 @@
 <title>Para ti 💌</title>
 
 <style>
+
+/* 🔥 ARREGLO GLOBAL */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #f8bbd0, #ce93d8);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Georgia', serif;
+    padding-top: 30px;
 }
 
 /* CONTENEDOR */
 .contenedor {
     text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
 }
 
 /* RAMO */
@@ -39,9 +49,10 @@ body {
 
 /* POEMA */
 .poema {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.4;
     color: #6a1b9a;
-    max-width: 180px;
+    max-width: 200px;
     text-align: right;
 }
 
@@ -62,7 +73,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     cursor: pointer;
     overflow: hidden;
-    margin-top: 15px;
+    margin: 20px auto;
 }
 
 /* TAPA */
@@ -129,11 +140,11 @@ body {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(2); opacity: 0; }
 }
+
 </style>
 </head>
 
 <body>
-  
 
 <div class="contenedor">
 
@@ -144,7 +155,7 @@ body {
     <div class="bloque">
         <div class="poema">
           TOCA LOS CORAZONES ANTES DE LEER 
-          <br> <br>
+          <br><br>
           porque yo me olvide te lo recuerdo <br>
           toca los corazonessssss pero el corazon que sella la carta no lo toques aun hasta despues de leer todo <br><br>
           te amo brisa mucho no se desde caundo pero espero que este sentimiento no desaparesca y que solo cresca mas con cada dia que pasa asi que te entrego este detalle que es para que no olvides caunto te amo y cuan especial eres para mi
@@ -175,7 +186,6 @@ function reventarGlobito() {
 
     globito.classList.add("explotar");
 
-    // 🎵 inicia música
     musica.play().catch(()=>{});
 
     setTimeout(() => {
