@@ -27,10 +27,28 @@ body {
     animation: flotar 3s infinite ease-in-out;
 }
 
-@keyframes flotar {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+/* TEXTO + GLOBITO */
+.bloque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* POEMA */
+.poema {
+    font-size: 14px;
+    color: #6a1b9a;
+    max-width: 180px;
+    text-align: right;
+}
+
+/* GLOBITO */
+.globito {
+    font-size: 35px;
+    cursor: pointer;
+    animation: flotar 2s infinite;
 }
 
 /* SOBRE */
@@ -43,6 +61,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     cursor: pointer;
     overflow: hidden;
+    margin-top: 15px;
 }
 
 /* TAPA */
@@ -59,12 +78,11 @@ body {
     transition: 0.6s;
 }
 
-/* ABIERTO */
 .sobre.abierto .tapa {
     transform: rotateX(180deg);
 }
 
-/* CORAZÓN SELLADO */
+/* CORAZÓN */
 .corazon {
     position: absolute;
     top: 65px;
@@ -88,22 +106,51 @@ body {
     opacity: 1;
 }
 
-/* LATIDO */
+/* ANIMACIONES */
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
 @keyframes latido {
     0% { transform: translateX(-50%) scale(1); }
     50% { transform: translateX(-50%) scale(1.3); }
     100% { transform: translateX(-50%) scale(1); }
 }
-</style>
 
+/* EXPLOSIÓN */
+.explotar {
+    animation: boom 0.4s forwards;
+}
+
+@keyframes boom {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+</style>
 </head>
 
 <body>
+  
 
 <div class="contenedor">
 
     <!-- RAMO -->
     <img src="girasol.png" class="ramo">
+
+    <!-- TEXTO + GLOBITO -->
+    <div class="bloque">
+        <div class="poema">
+          TOCA LOS CORAZONES ANTES DE LEER 
+          <br> <br>
+          porque yo me olvide te lo recuerdo <br>
+          toca los corazonessssss pero el corazon que sella la carta no lo toques aun hasta despues de leer todo <br><br>
+          te amo brisa mucho no se desde caundo pero espero que este sentimiento no desaparesca y que solo cresca mas con cada dia que pasa asi que te entrego este detalle que es para que no olvides caunto te amo y cuan especial eres para mi
+        </div>
+
+        <div onclick="reventarGlobito()" id="globito" class="globito">💗</div>
+    </div>
 
     <!-- SOBRE -->
     <div class="sobre" onclick="abrirCarta()" id="sobre">
@@ -114,12 +161,27 @@ body {
 
 </div>
 
-<!-- MÚSICA AUTOMÁTICA -->
-<audio autoplay loop>
-    <source src="te amo.mp3" type="audio/mpeg">
+<!-- MÚSICA -->
+<audio id="musica" loop>
+    <source src="jandi.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+let musica = document.getElementById("musica");
+
+function reventarGlobito() {
+    let globito = document.getElementById("globito");
+
+    globito.classList.add("explotar");
+
+    // 🎵 inicia música
+    musica.play().catch(()=>{});
+
+    setTimeout(() => {
+        globito.style.display = "none";
+    }, 400);
+}
+
 function abrirCarta() {
     let sobre = document.getElementById("sobre");
     sobre.classList.add("abierto");

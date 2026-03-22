@@ -9,30 +9,29 @@ body {
     margin: 0;
     background: linear-gradient(#fce4ec, #e1bee7);
     font-family: 'Georgia', serif;
-    padding: 20px;
 }
 
 /* Contenedor */
 .album {
-    max-width: 600px;
-    margin: auto;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 /* Secciones */
 .seccion {
     background: rgba(255,255,255,0.95);
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    animation: aparecer 1.5s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: aparecer 1.2s ease;
 }
 
 /* Animación */
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -44,12 +43,12 @@ h2 {
     color: #8e24aa;
 }
 
-/* Fotos */
+/* 📸 CUADROS CUADRADOS GRANDES */
 .foto {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    aspect-ratio: 1 / 1; /* 🔥 hace cuadrado perfecto */
+    object-fit: cover;   /* llena bonito */
+    border-radius: 12px;
     margin-top: 10px;
 }
 
@@ -63,14 +62,13 @@ h2 {
     animation: latido 1s infinite, brillo 1.5s infinite;
 }
 
-/* Latido */
+/* Animaciones */
 @keyframes latido {
     0% { transform: scale(1); }
     50% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
 
-/* Brillo */
 @keyframes brillo {
     0% {
         text-shadow: 0 0 5px #ff80ab, 0 0 10px #ff80ab;
@@ -91,37 +89,66 @@ h2 {
 <div class="album">
 
     <div class="seccion">
-        <h2>El inicio ✨</h2>
-        <p>Aquí empieza nuestra historia...</p>
-        <img src="foto1.jpg" class="foto">
+        <h2>Nuestro amistad</h2>
+        <p>tu amistad es lo que mas quiero y el mayor regalo que me das y espero que esta bella amistad sola vaya creciendo hasta que la vida decida separarnos con la muerte proque yo no seria capaz de dejarte ir en vida  </p>
+        <img src="dinos.jpg" class="foto">
     </div>
 
     <div class="seccion">
-        <h2>Momentos 💕</h2>
-        <p>Recuerdos que nunca olvidaré...</p>
-        <img src="foto2.jpg" class="foto">
+        <h2>Momentos </h2>
+        <p>Recuerdo todos los momentos que comparti contigo tanto buenos como malos pero mas los buenos la vez que nos burlamos del wilder o en la que lloramos en video llamada y son esos momentos los cuales hacen que te amo cada vez mas, te amo a ti, a tu personalidad, tus gustos, tus expresiones, amo como eres, como te esfuerzas y sobre todo amo todo tu ser y todo lo que complementas en mi </p>
+        <img src="fiesta.jpg" class="foto">
     </div>
 
     <div class="seccion">
-        <h2>Hoy 💌</h2>
-        <p>Lo que siento ahora...</p>
-        <img src="io.jpg" class="foto">
+        <h2>Todo lo que amo de ti</h2>
+        <p>Lo que siento por ti es mas que un simple querer yo te amo, te amo tanto como si fueras mi propia hermana, te amo por lo que eres, por tu sinceridad, por tu humor, por ti manera tan inusual de consolarme, por tods las veces que me apoyas, por tu sonrisa, tu esfuerzo, en total si tengo que mencionar todo lo que amo de ti no acabaria pronto porque lo que amo de ti es demasiado y tambien es porque soy medio lenta pero aun asi con todos mis defectos te amo y espero que todo tu maravilloso ser me ame tambien </p>
+        <img src="peaton.jpg" class="foto">
     </div>
-
+     <div class="seccion">
+        <h2>Despedida </h2>
+        </p>sabes para terminar esta carta quiero recordar nuestro ultimo año de colegio  el año en el que mas te ame, donde mi amor por ti se incremento de una manera sorprendente, el pensar de perderte, de perder contacto contigo o que dejaramos de hablar me destrozaba pero ahora eso es solo un mal recuerdo porque nuestra amistad fue mas fuerte que la separacion y la distancia y que a pesar de todo sepas que yo estoy para ti apoyandote y confiando en todo tu esfuerzo te amo bro </p>
+                <img src="io.jpg" class="foto">
+    </div>
+ <div class="seccion">
+        <h2>Dias dificiles</h2>
+        </p>sabes esos dias en el colegio donde te hice sentir mal y tu aun a pesar de todo fuiste capas de perdonarme y volver a iniciar nuestra amistad te lo agradesco eres tan gentil que has podido perdonar cada uno de mis errores </p>      
+        <img src="sistemas.jpg" class="foto">
+    </div>
+     <div class="seccion">
+        <h2>A tu lado</h2>
+        </p>sabes antes a mi me daba panico bailar y tu lograste que yo pudiera ser feliz y poder acoplarme a un curso donde yo me sentia tan fuera de lugar tu eres con quien me siento segura en el lugar donde te encuentres o al lugar que vayas quiero estar a tu lado para compartir tu felicidad, tus miedos y tus angustias</p>      
+        <img src="baile.jpg" class="foto">
+    </div>
+    
+     <div class="seccion">
+        <h2>Fotos</h2>
+        </p>te quiero decir que cada foto que sacas a pesar de mi negativa siempre es un lindo recuerdo que captura nuestros sentimientos, los momentos feliced y los tristes pero los momentos a tu lado no importa que siempre son especiales </p>      
+        <img src="filtro.jpg" class="foto">
+    </div> <div class="seccion">
+        <h2>Nuestra primera fiesta</h2>
+        </p>guardo ese recuerdo con ganta felicidad porque fue ese momento la vez que senti que eramos tan compatibles donde nos sentimos incomodas caundo los señores se sentaron a nuestro lado y como nos comimos todos los bocaditos, me recuerda las veces que fuimos nosotras mismas sin importat quien mirara </p>      
+        <img src="quince.jpg" class="foto">
+    </div>
 </div>
 
-<!-- Música -->
-<audio id="musica" autoplay loop>
-    <source src="favorito.m4a" type="audio/mpeg">
+<!-- 🎵 MÚSICA ARREGLADA -->
+<audio id="musica" loop>
+    <source src="teamo.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Corazón -->
+<!-- 💕 BOTÓN -->
 <div class="music-player" onclick="toggleMusic()">
     💕
 </div>
 
 <script>
 let musica = document.getElementById("musica");
+
+/* 🔥 activa música al primer toque */
+document.addEventListener("click", () => {
+    musica.play().catch(() => {});
+}, { once: true });
 
 function toggleMusic() {
     if (musica.paused) {
